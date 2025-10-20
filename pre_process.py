@@ -4,19 +4,9 @@ import os
 import networkx as nx
 import numpy as np
 import pandas as pd
-import pandas as pd
-import pandas as pd
-import seaborn as sns
 import torch
-from allensdk.core import swc
-from allensdk.core import swc
-from sklearn.manifold import TSNE
-from sklearn.neighbors import KNeighborsClassifier
-from tqdm import *
-from tqdm import *
 from tqdm import tqdm
 
-from morphFM.data.datasets.data_utils import remove_axon
 from morphFM.data.datasets.utils import compute_eig_lapl_torch_batch, adjacency_to_neighbors
 from morphFM.data.datasets.utils import neighbors_to_adjacency, subsample_graph, compute_node_distances, \
     remap_neighbors, neighbors_to_adjacency_torch
@@ -218,11 +208,11 @@ def run(now_dir, cfg):
 
 
 all_dataset = ['allen_cell_type_processed', 'allen_region_processed', 'BBP_cell_type_processed', 'BIL_cell_type_processed', 'M1_EXC_cell_type_processed', 'M1_EXC_region_processed']
-root_dir = '/mnt/data/aim/liyaxuan/git_project2/benchmark_datasets/'
+root_dir = 'benchmark_datasets'
 
 args = get_args_parser(add_help=True).parse_args()
-args.config_file = '/mnt/data/aim/liyaxuan/git_project2/configs/ours_final.yaml'
-args.output_dir = '/mnt/data/aim/liyaxuan/git_project2/neuron_org_embedding'
+args.config_file = 'configs/ours_final.yaml'
+args.output_dir = 'neuron_org_embedding'
 cfg = setup(args)
 
 for dataset in all_dataset:

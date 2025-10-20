@@ -1,5 +1,5 @@
-/mnt/data/aim/liyaxuan/.conda/envs/treedino/bin/torchrun --nproc_per_node=2 morphFM/train/train.py \
+torchrun --nproc_per_node=2 morphFM/train/train.py \
 --config-file morphFM/configs/train/have_data_separate.yaml \
---output-dir /mnt/data/aim/liyaxuan/git_project2/ours_add_data_separate/ \
-train.dataset_path=NeuronMorpho:split=TRAIN:root=/mnt/data/aim/liyaxuan/git_project2/sample_predata:extra=/mnt/data/aim/liyaxuan/git_project2/sample_predata
+--output-dir ours_add_data_separate \
+train.dataset_path=NeuronMorpho:split=TRAIN:root=sample_predata:extra=sample_predata
 

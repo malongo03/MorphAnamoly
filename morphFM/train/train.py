@@ -472,7 +472,7 @@ def do_train(cfg, model, resume=False):
     logger_1 = logging.getLogger('class_logger')
     logger_1.setLevel(logging.DEBUG)
 
-    file_log = logging.FileHandler('/mnt/data/aim/liyaxuan/git_project2/test_in_training/' + nowdate,'a',encoding='utf-8')
+    file_log = logging.FileHandler('test_in_training' + nowdate,'a',encoding='utf-8')
     file_log.setLevel(logging.DEBUG)
 
     formatter = logging.Formatter('%(asctime)s - %(filename)s - %(message)s ')
@@ -482,7 +482,7 @@ def do_train(cfg, model, resume=False):
     logger_1.addHandler(file_log)
     logger_1.propagate = False
     
-    dir_name = '/mnt/data/aim/liyaxuan/git_project2/benchmark_datasets/'
+    dir_name = 'benchmark_datasets'
 
     with os.scandir(dir_name) as entries:
         all_dataset_names = [entry.name for entry in entries if entry.is_dir()]

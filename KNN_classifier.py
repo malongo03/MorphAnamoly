@@ -2,11 +2,7 @@ import json
 import math
 
 import numpy as np
-import pandas as pd
-import seaborn as sns
 import torch
-from allensdk.core import swc
-from sklearn.manifold import TSNE
 from sklearn.neighbors import KNeighborsClassifier
 from tqdm import *
 
@@ -16,9 +12,8 @@ from morphFM.utils.config import setup
 
 all_dataset = ['allen_cell_type_processed', 'allen_region_processed', 'BBP_cell_type_processed', 'BIL_cell_type_processed', 'M1_EXC_cell_type_processed', 'M1_EXC_region_processed']
 #all_dataset = ['allen_cell_type_processed']
-root_dir = '/mnt/data/aim/liyaxuan/projects/git_project2/benchmark_datasets/'
-#checkpoint_path = '/mnt/data/aim/liyaxuan/projects/git_project2/ours_checkpoint.pth'
-checkpoint_path = '/mnt/data/aim/liyaxuan/projects/git_project2/60423_student_checkpoint.pth'
+root_dir = 'benchmark_datasets'
+checkpoint_path = '60423_student_checkpoint.pth'
 
 def KNN(all_labels, all_embedding):
     
@@ -128,8 +123,8 @@ def run(now_dataset, cfg):
 
 
 args = get_args_parser(add_help=True).parse_args()
-args.config_file = '/mnt/data/aim/liyaxuan/projects/git_project2/configs/ours_final.yaml'
-args.output_dir = '/mnt/data/aim/liyaxuan/projects/git_project2/neuron_org_embedding'
+args.config_file = 'configs/ours_final.yaml'
+args.output_dir = 'neuron_org_embedding'
 cfg = setup(args)
 model = build_model(cfg)
 

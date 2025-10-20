@@ -26,7 +26,7 @@ _Target = int
 nowdate = datetime.datetime.now().strftime("%Y-%m-%dT%H-%M-%S")
 logger_bug = logging.getLogger('morphFM_bug')
 logger_bug.setLevel(logging.DEBUG)
-file_log = logging.FileHandler('/mnt/data/aim/liyaxuan/git_project2/idx_in_training/' + nowdate,'a',encoding='utf-8')
+file_log = logging.FileHandler('idx_in_training' + nowdate,'a',encoding='utf-8')
 file_log.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(filename)s - %(message)s ')
 file_log.setFormatter(formatter)
