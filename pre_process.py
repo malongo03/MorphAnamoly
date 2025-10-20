@@ -208,7 +208,7 @@ def run(now_dir, cfg):
 
 
 all_dataset = ['allen_cell_type_processed', 'allen_region_processed', 'BBP_cell_type_processed', 'BIL_cell_type_processed', 'M1_EXC_cell_type_processed', 'M1_EXC_region_processed']
-root_dir = 'benchmark_datasets'
+root_dir = 'benchmark_datasets/'
 
 args = get_args_parser(add_help=True).parse_args()
 args.config_file = 'configs/ours_final.yaml'

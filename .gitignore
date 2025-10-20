@@ -1,0 +1,21 @@
+# Python bytecode and cache
+__pycache__/
+*.pyc
+
+# IDE configuration folders
+.idea/
+.vscode/
+
+# Environment backups
+*.yml
+
+# Temporary training files created by the script
+idx_in_training*
+
+# Data, output, and log folders (add these if you have them)
+benchmark_dataset/
+benechmark_datasetsallen_cell_type_processed/
+logs/
+*.swc
+*.pth
+*.pkl
