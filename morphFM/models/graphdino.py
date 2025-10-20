@@ -1,12 +1,13 @@
 # Attention and Block adapted from https://github.com/rwightman/pytorch-image-models/blob/master/timm/models/vision_transformer.py
 # DINO adapted from https://github.com/lucidrains/vit-pytorch/blob/main/vit_pytorch/dino.py
 
-import copy
+import logging
+from functools import partial
+from typing import Any
+
 import torch
 import torch.nn as nn
-from typing import Any
-from functools import partial
-import logging
+
 logger = logging.getLogger("morphFM")
 
 class GraphAttention(nn.Module):

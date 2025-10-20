@@ -10,9 +10,9 @@ import torch.nn as nn
 from mmcv.cnn import ConvModule, Linear, build_activation_layer
 from mmcv.runner import BaseModule
 
-from ...ops import resize
-from ..builder import HEADS
 from .decode_head import DepthBaseDecodeHead
+from ..builder import HEADS
+from ...ops import resize
 
 
 class Interpolate(nn.Module):

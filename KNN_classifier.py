@@ -1,43 +1,18 @@
-from pathlib import Path
-import pickle
-import pandas as pd
-import networkx as nx
-from allensdk.core import swc
-import numpy as np
-from tqdm import *
-import os
-import time
-import csv
-from enum import Enum
-import logging
-from typing import Callable, List, Optional, Tuple, Union
-import pickle
-import numpy as np
-from pathlib import Path
-from torch.multiprocessing import Manager
-from torch.utils.data import Dataset, DataLoader
-import torch
-from torch import nn
-from morphFM.data.datasets.utils import neighbors_to_adjacency, subsample_graph, rotate_graph, jitter_node_pos, translate_soma_pos, get_leaf_branch_nodes, compute_node_distances, drop_random_branch, remap_neighbors, neighbors_to_adjacency_torch
-from morphFM.data.datasets.data_utils import connect_graph, remove_axon, rotate_cell
-import copy
 import json
-import seaborn as sns
-from sklearn.manifold import TSNE
-from morphFM.data.datasets.neuron_morpho import NeuronMorpho
-from morphFM.train.utils_graph import plot_neuron, plot_tsne, neighbors_to_adjacency_torch, compute_eig_lapl_torch_batch
-from morphFM.models import build_model_from_cfg
-from morphFM.utils.config import setup
-from morphFM.train.train import get_args_parser,build_optimizer,build_schedulers
-from morphFM.train.ssl_meta_arch import SSLMetaArch
-import os
-from morphFM.fsdp import FSDPCheckpointer
-from morphFM.models.graphdino import GraphTransformer
-import torch.optim as optim
-from torch.utils.data import random_split
-import datetime
 import math
+
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import torch
+from allensdk.core import swc
+from sklearn.manifold import TSNE
 from sklearn.neighbors import KNeighborsClassifier
+from tqdm import *
+
+from morphFM.train.ssl_meta_arch import SSLMetaArch
+from morphFM.train.train import get_args_parser
+from morphFM.utils.config import setup
 
 all_dataset = ['allen_cell_type_processed', 'allen_region_processed', 'BBP_cell_type_processed', 'BIL_cell_type_processed', 'M1_EXC_cell_type_processed', 'M1_EXC_region_processed']
 #all_dataset = ['allen_cell_type_processed']

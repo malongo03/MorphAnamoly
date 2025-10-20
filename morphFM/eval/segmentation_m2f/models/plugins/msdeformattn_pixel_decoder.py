@@ -10,8 +10,8 @@ from mmcv.cnn import PLUGIN_LAYERS, Conv2d, ConvModule, caffe2_xavier_init, norm
 from mmcv.cnn.bricks.transformer import build_positional_encoding, build_transformer_layer_sequence
 from mmcv.runner import BaseModule, ModuleList
 
-from ...core.anchor import MlvlPointGenerator
 from ..utils.transformer import MultiScaleDeformableAttention
+from ...core.anchor import MlvlPointGenerator
 
 
 @PLUGIN_LAYERS.register_module()

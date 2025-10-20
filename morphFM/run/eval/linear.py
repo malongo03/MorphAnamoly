@@ -11,7 +11,6 @@ from morphFM.eval.linear import get_args_parser as get_linear_args_parser
 from morphFM.logging import setup_logging
 from morphFM.run.submit import get_args_parser, submit_jobs
 
-
 logger = logging.getLogger("morphFM")
 
 

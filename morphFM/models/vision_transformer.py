@@ -7,9 +7,9 @@
 #   https://github.com/facebookresearch/dino/blob/main/vision_transformer.py
 #   https://github.com/rwightman/pytorch-image-models/tree/master/timm/models/vision_transformer.py
 
-from functools import partial
-import math
 import logging
+import math
+from functools import partial
 from typing import Sequence, Tuple, Union, Callable
 
 import torch
@@ -18,7 +18,6 @@ import torch.utils.checkpoint
 from torch.nn.init import trunc_normal_
 
 from morphFM.layers import Mlp, PatchEmbed, SwiGLUFFNFused, MemEffAttention, NestedTensorBlock as Block
-
 
 logger = logging.getLogger("morphFM")
 

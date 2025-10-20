@@ -12,8 +12,8 @@ import torch
 import torch.nn as nn
 from mmcv.runner import BaseModule, auto_fp16, force_fp32
 
-from ...ops import resize
 from ..builder import build_loss
+from ...ops import resize
 
 
 class DepthBaseDecodeHead(BaseModule, metaclass=ABCMeta):

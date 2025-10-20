@@ -9,9 +9,9 @@ from typing import Any, List, Optional, Tuple
 import torch
 import torch.backends.cudnn as cudnn
 
+import morphFM.utils.utils as morphFM_utils
 from morphFM.models import build_model_from_cfg
 from morphFM.utils.config import setup
-import morphFM.utils.utils as morphFM_utils
 
 
 def get_args_parser(

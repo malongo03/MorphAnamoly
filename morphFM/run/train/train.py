@@ -8,9 +8,8 @@ import os
 import sys
 
 from morphFM.logging import setup_logging
-from morphFM.train import get_args_parser as get_train_args_parser
 from morphFM.run.submit import get_args_parser, submit_jobs
-
+from morphFM.train import get_args_parser as get_train_args_parser
 
 logger = logging.getLogger("morphFM")
 

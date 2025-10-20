@@ -10,10 +10,10 @@ import sys
 import time
 from typing import List, Optional
 
-from cuml.linear_model import LogisticRegression
 import torch
 import torch.backends.cudnn as cudnn
 import torch.distributed
+from cuml.linear_model import LogisticRegression
 from torch import nn
 from torch.utils.data import TensorDataset
 from torchmetrics import MetricTracker
@@ -26,7 +26,6 @@ from morphFM.eval.setup import get_args_parser as get_setup_args_parser
 from morphFM.eval.setup import setup_and_build_model
 from morphFM.eval.utils import evaluate, extract_features
 from morphFM.utils.dtype import as_torch_dtype
-
 
 logger = logging.getLogger("morphFM")
 

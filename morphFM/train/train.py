@@ -7,36 +7,34 @@ import argparse
 import logging
 import math
 import os
-from functools import partial
 import pickle
-from fvcore.common.checkpoint import PeriodicCheckpointer
-import torch
-import json 
 import sys
+from functools import partial
+
+import torch
+from fvcore.common.checkpoint import PeriodicCheckpointer
+
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))))
 from pathlib import Path
 from torch.multiprocessing import Manager
 from tqdm import tqdm
-from morphFM.data.datasets.neuron_morpho import NeuronMorpho
-from morphFM.train.utils_graph import plot_neuron, plot_tsne, neighbors_to_adjacency_torch, compute_eig_lapl_torch_batch
+from morphFM.train.utils_graph import neighbors_to_adjacency_torch, compute_eig_lapl_torch_batch
 from morphFM.data import SamplerType, make_data_loader, make_dataset
-from morphFM.data import collate_data_and_cast, DataAugmentationDINO, MaskingGenerator
+from morphFM.data import collate_data_and_cast, MaskingGenerator
 import morphFM.distributed as distributed
 from morphFM.fsdp import FSDPCheckpointer
 from morphFM.logging import MetricLogger
 from morphFM.utils.config import setup
 from morphFM.utils.utils import CosineScheduler
 from sklearn.neighbors import KNeighborsClassifier
-from torch.utils.data import Dataset, DataLoader
+from torch.utils.data import Dataset
 from morphFM.train.ssl_meta_arch import SSLMetaArch
 import numpy as np
 import shutil
 from torch import nn
-import copy
 import datetime
-from morphFM.data.datasets.utils import neighbors_to_adjacency, subsample_graph, rotate_graph, jitter_node_pos, translate_soma_pos, get_leaf_branch_nodes, compute_node_distances, drop_random_branch, remap_neighbors, neighbors_to_adjacency_torch
+from morphFM.data.datasets.utils import subsample_graph, remap_neighbors, neighbors_to_adjacency_torch
 import torch.optim as optim
-from torch.utils.data import random_split
 
 torch.backends.cuda.matmul.allow_tf32 = True  # PyTorch 1.12 sets this to False by default
 logger = logging.getLogger("morphFM")

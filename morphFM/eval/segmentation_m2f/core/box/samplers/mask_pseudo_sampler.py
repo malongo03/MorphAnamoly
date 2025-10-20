@@ -8,9 +8,9 @@
 
 import torch
 
-from ..builder import BBOX_SAMPLERS
 from .base_sampler import BaseSampler
 from .mask_sampling_result import MaskSamplingResult
+from ..builder import BBOX_SAMPLERS
 
 
 @BBOX_SAMPLERS.register_module()

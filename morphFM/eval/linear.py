@@ -4,28 +4,27 @@
 # found in the LICENSE file in the root directory of this source tree.
 
 import argparse
-from functools import partial
 import json
 import logging
 import os
 import sys
+from functools import partial
 from typing import List, Optional
 
 import numpy as np
 import torch
 import torch.nn as nn
-from torch.nn.parallel import DistributedDataParallel
 from fvcore.common.checkpoint import Checkpointer, PeriodicCheckpointer
+from torch.nn.parallel import DistributedDataParallel
 
+import morphFM.distributed as distributed
 from morphFM.data import SamplerType, make_data_loader, make_dataset
 from morphFM.data.transforms import make_classification_eval_transform, make_classification_train_transform
-import morphFM.distributed as distributed
 from morphFM.eval.metrics import MetricType, build_metric
 from morphFM.eval.setup import get_args_parser as get_setup_args_parser
 from morphFM.eval.setup import setup_and_build_model
 from morphFM.eval.utils import ModelWithIntermediateLayers, evaluate
 from morphFM.logging import MetricLogger
-
 
 logger = logging.getLogger("morphFM")
 

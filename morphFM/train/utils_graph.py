@@ -1,11 +1,10 @@
-import torch
+import matplotlib.pylab as plt
 import numpy as np
 import seaborn as sns
-import matplotlib.pylab as plt
-from collections import defaultdict
+import torch
 from scipy.spatial.transform import Rotation as R
 
-    
+
 class AverageMeter(object):
     """ Computes and stores the average and current value."""
     def __init__(self):

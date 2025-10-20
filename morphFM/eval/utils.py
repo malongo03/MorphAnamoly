@@ -10,10 +10,9 @@ import torch
 from torch import nn
 from torchmetrics import MetricCollection
 
-from morphFM.data import DatasetWithEnumeratedTargets, SamplerType, make_data_loader
 import morphFM.distributed as distributed
+from morphFM.data import DatasetWithEnumeratedTargets, SamplerType, make_data_loader
 from morphFM.logging import MetricLogger
-
 
 logger = logging.getLogger("morphFM")
 

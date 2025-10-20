@@ -11,9 +11,9 @@ import torch.nn.functional as F
 from mmseg.models.builder import BACKBONES
 from torch.nn.init import normal_
 
-from ...ops.modules import MSDeformAttn
 from .adapter_modules import InteractionBlock, InteractionBlockWithCls, SpatialPriorModule, deform_inputs
 from .vit import TIMMVisionTransformer
+from ...ops.modules import MSDeformAttn
 
 
 @BACKBONES.register_module()

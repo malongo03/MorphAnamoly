@@ -1,7 +1,7 @@
 import torch
-import itertools
-from torch.utils.data import Sampler
 import torch.distributed as distributed
+from torch.utils.data import Sampler
+
 
 class GroupedShardedInfiniteSampler(Sampler):
     def __init__(

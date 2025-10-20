@@ -6,9 +6,9 @@
 import torch
 import torch.nn as nn
 
-from ...ops import resize
-from ..builder import HEADS
 from .decode_head import DepthBaseDecodeHead
+from ..builder import HEADS
+from ...ops import resize
 
 
 @HEADS.register_module()

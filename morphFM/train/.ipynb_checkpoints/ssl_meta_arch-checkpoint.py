@@ -3,20 +3,20 @@
 # This source code is licensed under the Apache License, Version 2.0
 # found in the LICENSE file in the root directory of this source tree.
 
-from functools import partial
 import logging
+import math
+from functools import partial
 
 import torch
 from torch import nn
-import math
+
+from morphFM.fsdp import get_fsdp_wrapper, ShardedGradScaler, get_fsdp_modules, reshard_fsdp_model
+from morphFM.layers import DINOHead
 from morphFM.loss import DINOLoss, iBOTPatchLoss, KoLeoLoss
 from morphFM.models import build_model_from_cfg
-from morphFM.layers import DINOHead
-from morphFM.utils.utils import has_batchnorms
-from morphFM.utils.param_groups import get_params_groups_with_decay, fuse_params_groups
-from morphFM.fsdp import get_fsdp_wrapper, ShardedGradScaler, get_fsdp_modules, reshard_fsdp_model
-
 from morphFM.models.vision_transformer import BlockChunk
+from morphFM.utils.param_groups import get_params_groups_with_decay, fuse_params_groups
+from morphFM.utils.utils import has_batchnorms
 from .utils_graph import AverageMeter, compute_eig_lapl_torch_batch
 
 try:

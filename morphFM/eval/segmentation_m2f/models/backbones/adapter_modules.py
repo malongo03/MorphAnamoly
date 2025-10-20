@@ -9,8 +9,8 @@ import torch
 import torch.nn as nn
 import torch.utils.checkpoint as cp
 
-from ...ops.modules import MSDeformAttn
 from .drop_path import DropPath
+from ...ops.modules import MSDeformAttn
 
 
 def get_reference_points(spatial_shapes, device):

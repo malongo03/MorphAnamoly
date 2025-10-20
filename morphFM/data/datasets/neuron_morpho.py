@@ -3,28 +3,23 @@
 # This source code is licensed under the Apache License, Version 2.0
 # found in the LICENSE file in the root directory of this source tree.
 
-import csv
-from enum import Enum
-import logging
-import os
-from typing import Callable, List, Optional, Tuple, Union
-
-import numpy as np
-
-from .extended import ExtendedVisionDataset
-import torch
-import pickle
-import numpy as np
-from tqdm import tqdm
-from pathlib import Path
-from torch.multiprocessing import Manager
-from torch.utils.data import Dataset, DataLoader
-
-from .utils import neighbors_to_adjacency, subsample_graph, rotate_graph, jitter_node_pos, translate_soma_pos, get_leaf_branch_nodes, compute_node_distances, drop_random_branch, remap_neighbors, neighbors_to_adjacency_torch
-from .data_utils import connect_graph, remove_axon, rotate_cell
-import json
 import copy
 import datetime
+import logging
+import os
+import pickle
+from enum import Enum
+from pathlib import Path
+from typing import Callable, Optional, Tuple, Union
+
+import torch
+from torch.multiprocessing import Manager
+from torch.utils.data import Dataset
+from tqdm import tqdm
+
+from .data_utils import remove_axon
+from .utils import neighbors_to_adjacency, subsample_graph, rotate_graph, jitter_node_pos, translate_soma_pos, \
+    get_leaf_branch_nodes, compute_node_distances, drop_random_branch, remap_neighbors, neighbors_to_adjacency_torch
 
 _Target = int
 

@@ -7,12 +7,12 @@ import argparse
 import logging
 import math
 import os
+import sys
 from functools import partial
 
-from fvcore.common.checkpoint import PeriodicCheckpointer
 import torch
+from fvcore.common.checkpoint import PeriodicCheckpointer
 
-import sys
 sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(os.path.realpath(__file__)))))
 
 from morphFM.data import SamplerType, make_data_loader, make_dataset

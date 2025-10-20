@@ -11,8 +11,7 @@ import torch
 from torch.utils.data import Sampler
 
 from .datasets import ImageNet, ImageNet22k, NeuronMorpho
-from .samplers import EpochSampler, InfiniteSampler, ShardedInfiniteSampler, GroupedShardedInfiniteSampler
-
+from .samplers import EpochSampler, InfiniteSampler, GroupedShardedInfiniteSampler
 
 logger = logging.getLogger("morphFM")
 

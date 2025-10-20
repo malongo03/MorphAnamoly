@@ -3,17 +3,16 @@
 # This source code is licensed under the Apache License, Version 2.0
 # found in the LICENSE file in the root directory of this source tree.
 
-import math
 import logging
+import math
 import os
 
 from omegaconf import OmegaConf
 
 import morphFM.distributed as distributed
+from morphFM.configs import morphFM_default_config
 from morphFM.logging import setup_logging
 from morphFM.utils import utils
-from morphFM.configs import morphFM_default_config
-
 
 logger = logging.getLogger("morphFM")
 

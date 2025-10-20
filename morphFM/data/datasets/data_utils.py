@@ -1,8 +1,10 @@
+import networkx as nx
 import numpy as np
 import pandas as pd
-import networkx as nx
 from scipy.spatial.transform import Rotation as R
-from .utils import neighbors_to_adjacency,remap_neighbors
+
+from .utils import neighbors_to_adjacency, remap_neighbors
+
 
 def connect_graph(adj_matrix, neighbors, features, verbose=False):
     """
